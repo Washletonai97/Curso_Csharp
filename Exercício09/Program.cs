@@ -1,4 +1,6 @@
-﻿namespace Exercício09
+﻿using System.ComponentModel.Design;
+
+namespace Exercício09
 {
     internal class Program
     {
@@ -18,12 +20,26 @@
             if ((ladoA < ladoB + ladoC) && (ladoB < ladoA + ladoC) && (ladoC < ladoA + ladoB))
             {
                 Console.WriteLine("Os valores informados formam um triângulo.");
-            }
-            else
-            {
-                Console.WriteLine("Os valores informados não formam um triângulo.");
+                if ((ladoA == ladoB) && (ladoB == ladoC))
+                {
 
+                    Console.WriteLine(" E ele é um Triângulo Equilátero.");
+                }
+
+                else if ((ladoA == ladoB) || (ladoA == ladoC) || (ladoB == ladoC))
+                {
+                    Console.WriteLine("E ele é um Triângulo Isósceles.");
+                }
+
+                else
+                {
+                    Console.WriteLine("E ele é um Triângulo Escaleno.");
+                }
+            } else 
+                 {
+                    Console.WriteLine("Os valores informados não formam um triângulo.");
+
+                }
             }
         }
     }
-}
